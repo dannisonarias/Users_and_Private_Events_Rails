@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2020_04_15_153227) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["creator_id"], name: "index_events_on_creator_id"
   end
 
   create_table "registrations", force: :cascade do |t|

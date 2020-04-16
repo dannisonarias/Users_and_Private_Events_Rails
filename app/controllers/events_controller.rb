@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   include EventsHelper
-  # require user to be logged in for access to any methods
-  # before_action :require_login, except: [:index]
+   # require user to be logged in for access to any methods
+   before_action :require_login, except: [:index]
 
   def index
     # includes user to avoid n+1 problem in the view
