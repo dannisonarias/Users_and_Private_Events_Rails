@@ -1,8 +1,8 @@
 class CreateRegistrations < ActiveRecord::Migration[5.2]
   def change
     create_table :registrations do |t|
-      t.references :user, foreign_key: true
-      t.references :event, foreign_key: true
+      t.integer :event_id
+      t.integer :user_id
       t.string :note
 
       t.timestamps

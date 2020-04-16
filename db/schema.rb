@@ -22,13 +22,11 @@ ActiveRecord::Schema.define(version: 2020_04_15_153227) do
   end
 
   create_table "registrations", force: :cascade do |t|
-    t.integer "user_id"
     t.integer "event_id"
+    t.integer "user_id"
     t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_registrations_on_event_id"
-    t.index ["user_id"], name: "index_registrations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

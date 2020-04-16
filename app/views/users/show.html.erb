@@ -1,7 +1,7 @@
 <h1><%=@user.name.capitalize%>'s Profile</h1>
 <h2 class="d-flex"> Hosted Events </h2>
 <hr>
-<%@user.events.each do |event|%>
+<%@user.reload.events.each do |event|%>
     <h3><%=event.name%></h3>
     <p>
         Date: <%=event.date%>

@@ -4,7 +4,6 @@ class EventsController < ApplicationController
    before_action :require_login, except: [:index]
 
   def index
-    # includes user to avoid n+1 problem in the view
     @event = Event.all
   end
 
