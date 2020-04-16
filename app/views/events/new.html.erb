@@ -1,0 +1,19 @@
+
+<%= form_with(:class => 'form1',model: @event) do |f|%>
+<h1 class='new_user'>New Event</h1>
+  <div class="field">
+    <%=f.label :name  %>
+    <%=f.text_field :name, :required => true%>
+  </div>
+
+    <div class="field">
+        <%=f.label :date  %>
+        <%=f.text_field :date %>
+    </div>
+
+    <div class="field">
+        <%=f.label :description  %>
+        <%=f.text_field :description %>
+    </div>
+    <%=f.submit "Create Event",:class => 'btn btn-primary createbtn'%>
+<%end%>

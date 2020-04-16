@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <%= debug(params) if Rails.env.development? %>
+    <%console%>
+  <nav class="nav justify-content-between">
+  <%=link_to "Home", :root, :class =>"nav-link active"%>
+  <%=link_to "Register new", new_user_path, :class =>"nav-link active"%>
+  <%if @current_user %>
+    <%=link_to "#{@current_user.name} Sign out" ,session_path(id: @current_user.id),:class =>"nav-link active",:method => :DELETE %>
+  <%else%>
+    <%=link_to "Sign in", new_session_path, :class =>"nav-link active"%>
+   <%end%>
+    <%=link_to "New event" ,new_event_path,:class =>"nav-link active",:method => :GET %>
+  </nav>
+  <%= render 'shared/errors'%>
     <%= yield %>
   </body>
 </html>

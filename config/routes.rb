@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  resources :event, only: [:show,:new,:create]
-  resources :user , only: [:show,:new,:create]  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: "events#show"
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :events, only: [:show,:new,:create]
+  resources :users , except: [:index]
 end
