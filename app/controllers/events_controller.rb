@@ -10,7 +10,6 @@ class EventsController < ApplicationController
 
   def create
     @event = current_user.events.build(event_params)
-    debugger
     if @event.save
       flash[:success] = 'Event Successfully Created'
       redirect_to :root
