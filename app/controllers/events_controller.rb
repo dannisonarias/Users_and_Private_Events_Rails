@@ -4,7 +4,8 @@ class EventsController < ApplicationController
    before_action :require_login, except: [:index]
 
   def index
-    @event = Event.all
+    @event = Event.all.future_events
+    @pastevent = Event.all.past_events
   end
 
   def create

@@ -1,21 +1,59 @@
-<h1 class="d-flex"> Events </h1>
-<hr>
-<%@event.each do |event|%>
-    <h3><%=event.name%></h3>
-    <p>
-        Date: <%=event.date%>
-    </p>
-     <p>
-        Host: <%=event.creator.name%>
-    </p>
-    <p>
-       Description: <%=event.description%>
-    </p>
-    <h4>Attending this event</h4>
-    <p>
-       <%# =>: <%=event.attendees%> %>
+<div class="d-flex">
+    <div class="col-6">
+        <h1 class="d-flex"> Upcoming Events </h1>
+        <hr>
+        <%@event.each do |event|%>
+        <div class="d-flex event-header">
+            <h3><span class="livetitle"><%=event.name%></span></h3>
+            <p>
+            Date: <span class="livec"><%=event.date%></span>
+            </p>
+            <p>
+            Host: <span class="livec"><%=event.creator.name%></span>
+            </p>
+        </div>
+        <p>
+        Description: <span class="livec"><%=event.description%></span>
+        </p>
+        <h4>Attending this event</h4>
+        <p>
+        <%event.attendees.pluck(:name).each do |person|%>
+        <span class="livec"><%=person%></span>,
+        <%end%>
     </p>
     <hr>
-<%end%>
-<%# form_with model attendees %>
+    <%end%>
+    </div>
+
+
+    <div class="col-6">
+        <h1 class="d-flex"> Past Events </h1>
+        <hr>
+        <%@pastevent.each do |event|%>
+        <div class="d-flex event-header">
+        <h3><span class="livetitle"><%=event.name%></span></h3>
+        <p>
+        Date: <span class="livec"><%=event.date%></span>
+        </p>
+        <p>
+        Host: <span class="livec"><%=event.creator.name%></span>
+        </p>
+        </div>
+        <p>
+        Description: <span class="livec"><%=event.description%></span>
+        </p>
+        <h4>Attending this event</h4>
+        <p>
+        <%event.attendees.pluck(:name).each do |person|%>
+        <span class="livec"><%=person%></span>,
+        <%end%>
+        
+        </p>
+        <hr>
+        <%end%>
+    </div>
+</div>
+
+
+
 

@@ -12,4 +12,17 @@
     <hr>
 <%end%>
 <h2> Attending Events </h2>
+<%@user.reload.activities.each do |activity|%>
+    <h3><%=activity.name%></h3>
+    <p>
+        Date: <%=activity.date%>
+    </p>
+    <p>
+        Host: <%=activity.creator.name%>
+    </p>
+    <p>
+       Description: <%=activity.description%>
+    </p>
+    <hr>
+<%end%>
 
