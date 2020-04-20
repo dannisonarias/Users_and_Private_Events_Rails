@@ -9,7 +9,7 @@ Event’s Show page displays a list of attendees.
 User’s profile(show) page displays a list of events they are attending.
 Users can invite to their most recently created event.
 
-![screenshot](/screenshot/Screenshot from 2020-04-20 15-30-10.jpg)
+[](screenshot/Screenshot from 2020-04-20 15-30-10.jpg)
 
 # Install
 1. Install 
