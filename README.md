@@ -9,7 +9,7 @@ Event’s Show page displays a list of attendees.
 User’s profile(show) page displays a list of events they are attending.
 Users can invite to their most recently created event.
 
-![sample](screenshot/ss.jpg)
+![sample](/screenshot/ss.jpg)
 
 # Install
 1. Install 
