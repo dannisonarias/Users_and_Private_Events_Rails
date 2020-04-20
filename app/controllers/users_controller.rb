@@ -3,6 +3,11 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
+    if current_user.events.last.nil?
+      flash[:warning] = "can't invite unless you are hosting an event!"
+      redirect_to :root
+      return
+    end
     @users = User.all
   end
 

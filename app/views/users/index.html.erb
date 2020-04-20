@@ -2,10 +2,12 @@
 <ul>
     <%@users.pluck(:name).each do |users_name|%>
         <li>
-            <%=users_name.capitalize%>
-            <%= form_with model: Registration.new, method:"post" do |f| %>
-                 <%= f.submit 'Login',name:"invitee", value: users_name ,:class => "btn #{users_name} btn-primary" %>
-            <%end%>
+            <span class ='span-1'> Invite => 
+                <%= form_with model: Registration.new, method:"post" do |f| %>
+                    <%= f.submit 'Login',name:"invitee", value: users_name ,:class => "btn #{users_name} btn-primary" %>
+                <%end%>
+                To your event named=> <%=current_user.events.last.name%>
+            </span>
         </li>
     <%end%>
 </ul>
