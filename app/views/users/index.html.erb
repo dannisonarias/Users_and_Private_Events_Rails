@@ -4,7 +4,7 @@
         <li>
             <%=users_name.capitalize%>
             <%= form_with model: Registration.new, method:"post" do |f| %>
-                 <%= f.submit 'Login',name:"invitee", value: users_name ,:class => 'btn btn-primary' %>
+                 <%= f.submit 'Login',name:"invitee", value: users_name ,:class => "btn #{users_name} btn-primary" %>
             <%end%>
         </li>
     <%end%>

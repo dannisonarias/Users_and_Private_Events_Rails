@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   include EventsHelper
-   # require user to be logged in for access to any methods
-   before_action :require_login, except: [:index]
+  # require user to be logged in for access to any methods
+  before_action :require_login, except: [:index]
 
   def index
     @event = Event.all.future_events
@@ -23,6 +23,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :date,:description)
+    params.require(:event).permit(:name, :date, :description)
   end
 end

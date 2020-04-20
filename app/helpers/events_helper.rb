@@ -1,10 +1,10 @@
 module EventsHelper
-    # require user to be logged in for access
+  # require user to be logged in for access
   def require_login
-    if current_user.nil?
-      flash[:warning] = 'You must be logged in to access this section'
-      redirect_to new_session_path # halts request cycle
-    end
+    return unless current_user.nil?
+
+    flash[:warning] = 'You must be logged in to access this section'
+    redirect_to new_session_path
   end
 
   def show_author(post)

@@ -5,5 +5,4 @@ class UserControllerTest < ActionDispatch::IntegrationTest
   #   get user_index_url
   #   assert_response :success
   # end
-
 end
