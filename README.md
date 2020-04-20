@@ -5,3 +5,4 @@ only logged in users can create events
 users can attend events by clicking attend button on event
 Now make an Event’s Show page display a list of attendees.
 Make a User’s Show page display a list of events they are attending.
+Users can only invite to their first event (for now)

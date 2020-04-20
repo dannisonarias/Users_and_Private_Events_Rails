@@ -1,2 +1,11 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+<h1>All available users</h1>
+<ul>
+    <%@users.pluck(:name).each do |users_name|%>
+        <li>
+            <%=users_name.capitalize%>
+            <%= form_with model: Registration.new, method:"post" do |f| %>
+                 <%= f.submit 'Login',name:"invitee", value: users_name ,:class => 'btn btn-primary' %>
+            <%end%>
+        </li>
+    <%end%>
+</ul>
