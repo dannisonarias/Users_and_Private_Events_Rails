@@ -19,23 +19,33 @@ RSpec.describe Registration, type: :model do
 
   context 'Create new registration' do
     
-    it 'checks for registration validity with user_id and event_id' do
+    it 'expects for registration validity with user_id and event_id' do
       @reg1.user_id = 2
       @reg1.event_id = 1
       expect(@reg1.valid?).to eq(true)
     end
 
-    it 'checks for registration validity with event_id empty' do
+    it 'expects for registration invalidity with event_id empty' do
       @reg1.user_id = 2
       @reg1.event_id = ''
       expect(@reg1.valid?).to eq(false)
     end
 
-    it 'checks for registration validity with user_id empty' do
+    it 'expects for registration invalidity with user_id empty' do
       @reg1.user_id = ''
       @reg1.event_id = 1
       expect(@reg1.valid?).to eq(false)
     end
+
+    it 'expects association between users->events to not be nil' do
+      expect(@user1.events.first.attendees.first.name.class).to be_truthy
+    end
+
+    it 'expects association between events->attendees to not be nil' do
+      expect(@event1.attendees.first.name.class).to be_truthy
+    end
+    
+
   end
 
 end

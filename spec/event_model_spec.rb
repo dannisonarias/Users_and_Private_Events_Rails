@@ -15,12 +15,17 @@ RSpec.describe Registration, type: :model do
 
   context 'Create new event' do
     
-    it 'checks for event validity with all attributes' do
+    it 'expects for event validity with all attributes' do
       expect(@event1.valid?).to eq(true)
     end
 
-    it 'checks for registration validity with false creator_id' do
+    it 'expects for event invalidity with false creator_id' do
       @event1.creator_id = 'f'
+      expect(@event1.valid?).to eq(false)
+    end
+
+    it 'expects event model to validate name presence' do
+      @event1.name = ''
       expect(@event1.valid?).to eq(false)
     end
 
