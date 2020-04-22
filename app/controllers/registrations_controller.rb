@@ -7,7 +7,7 @@ class RegistrationsController < ApplicationController
       flash[:success] = 'User invited to your most recently created event!'
       redirect_to :root
     else
-      flash[:warning]
+      flash[:warning] = 'That user is already invited!'
       redirect_to users_path
     end
   end

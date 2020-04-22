@@ -8,6 +8,9 @@ class EventsController < ApplicationController
     @pastevent = Event.all.past_events
   end
 
+  def show
+  end
+
   def create
     @event = current_user.events.build(event_params)
     if @event.save
