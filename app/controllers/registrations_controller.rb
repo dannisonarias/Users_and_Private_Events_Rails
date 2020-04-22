@@ -1,5 +1,4 @@
 class RegistrationsController < ApplicationController
-
   def create
     @event_id ||= current_user.events.future_events.first.id
     @user_id ||= User.find_by(name: reg_params[:invitee]).id
