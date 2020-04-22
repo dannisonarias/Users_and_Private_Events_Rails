@@ -5,52 +5,30 @@
         <%@event.each do |event|%>
         <div class="d-flex event-header">
             <h3><span class="livetitle"><%=event.name%></span></h3>
+            
             <p>
-            Date: <span class="livec"><%=event.date%></span>
+                Date: <span class="livec"><%=event.date%></span>
             </p>
-            <p>
-            Host: <span class="livec"><%=event.creator.name%></span>
-            </p>
+            <%=link_to "Show event information" ,event,:class =>"event-show btn btn-info"%>
         </div>
-        <p>
-        Description: <span class="livec"><%=event.description%></span>
-        </p>
-        <h4>Attending this event</h4>
-        <p>
-        <%event.attendees.pluck(:name).each do |person|%>
-        <span class="livec"><%=person%></span>,
+        <hr>
         <%end%>
-    </p>
-    <hr>
-    <%end%>
     </div>
 
 
-    <div class="col-6">
-        <h1 class="d-flex"> Past Events </h1>
-        <hr>
-        <%@pastevent.each do |event|%>
-        <div class="d-flex event-header">
-        <h3><span class="livetitle"><%=event.name%></span></h3>
-        <p>
-        Date: <span class="livec"><%=event.date%></span>
-        </p>
-        <p>
-        Host: <span class="livec"><%=event.creator.name%></span>
-        </p>
+        <div class="col-6">
+            <h1 class="d-flex"> Past Events </h1>
+            <hr>
+            <%@pastevent.each do |event|%>
+            <div class="d-flex event-header">
+            <h3><span class="livetitle"><%=event.name%></span></h3>
+            <p>
+            Date: <span class="livec"><%=event.date%></span>
+            </p>
+            <%=link_to "Show event information" ,event,:class =>"event-show btn btn-info"%>
         </div>
-        <p>
-        Description: <span class="livec"><%=event.description%></span>
-        </p>
-        <h4>Attending this event</h4>
-        <p>
-        <%event.attendees.pluck(:name).each do |person|%>
-        <span class="livec"><%=person%></span>,
-        <%end%>
-        
-        </p>
-        <hr>
-        <%end%>
+            <hr>
+            <%end%>
     </div>
 </div>
 
