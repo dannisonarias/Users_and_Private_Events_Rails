@@ -1,9 +1,9 @@
 <h1><%=@user.name.capitalize%>'s Profile</h1>
-<h2 class="d-flex"> Hosted Events </h2>
+<h2 class="d-flex pastevents"> Attended Events </h2>
 <hr>
-<%@user.reload.events.each do |event|%>
-    <h3><%=event.name%></h3>
-    <p>
+<%@user.reload.activities.past_events.each do |event|%>
+    <h3 class="livetitle"><%=event.name%></h3>
+    <p class="livec">
         Date: <%=event.date%>
     </p>
     <p>
@@ -11,10 +11,10 @@
     </p>
     <hr>
 <%end%>
-<h2> Attending Events </h2>
-<%@user.reload.activities.each do |activity|%>
-    <h3><%=activity.name%></h3>
-    <p>
+<h2 class="futureevents"> Attending Events </h2>
+<%@user.reload.activities.future_events.each do |activity|%>
+    <h3 class="livetitle"><%=activity.name%></h3>
+    <p class="livec">
         Date: <%=activity.date%>
     </p>
     <p>

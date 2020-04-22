@@ -114,11 +114,19 @@
   color: rgb(98, 83, 180);
 }
 
-.span-1{
+.span-1 {
   display: flex;
   margin: 5px;
 }
 
-.event-show{
+.event-show {
   margin-left: 10px;
+}
+
+.pastevents {
+  color: rgb(109, 99, 99);
+}
+
+.futureevents {
+  color: rgb(31, 231, 31);
 }

@@ -11,7 +11,11 @@
 <p>
 Description: <span class="livec"><%=@event.description%></span>
 </p>
-<h4>Attending this event</h4>
+<%if @event.date < Date.today%>
+    <h4>Attended this event</h4>
+<%else%>
+    <h4>Attending event</h4>
+<%end%>
 <p>
 <%@event.attendees.pluck(:name).each do |person|%>
 <span class="livec"><%=person%></span>,

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    if current_user.events.last.nil?
+    if current_user.events.first.nil?
       flash[:warning] = "can't invite unless you are hosting an event!"
       redirect_to :root
       return

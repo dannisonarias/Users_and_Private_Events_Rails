@@ -4,7 +4,7 @@
         <li>
             <span class ='span-1'> Invite => 
                 <%= form_with model: Registration.new, method:"post" do |f| %>
-                    <%= f.submit 'Login',name:"invitee", value: users_name ,:class => "btn #{users_name} btn-primary" %>
+                    <%= f.submit 'Invited',name:"invitee", value: users_name ,:class => "btn #{users_name} btn-primary" %>
                 <%end%>
                 To your event named=> <%=current_user.events.last.name%>
             </span>
