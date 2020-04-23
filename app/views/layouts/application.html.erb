@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PrivateEvents</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class = "container">
+    <%= debug(params) if Rails.env.development? %>
+    <%console if Rails.env.development?%>
+  <nav class="nav justify-content-between">
+  <%=link_to "Home", :root, :class =>"nav-link active"%>
+  <%=link_to "Register new", new_user_path, :class =>"nav-link active"%>
+  <%if current_user %>
+    <%=link_to "#{current_user.name}-Sign out" ,session_path(id: current_user.id),:class =>"nav-link active",:method => :DELETE %>
+    <%=link_to "Invite Users" ,users_path,:class =>"nav-link active"%>
+  <%else%>
+    <%=link_to "Sign in", new_session_path, :class =>"nav-link active"%>
+   <%end%>
+    <%=link_to "New event" ,new_event_path,:class =>"nav-link active",:method => :GET %>
+    <%if current_user %>
+      <%=link_to "#{current_user.name}'s Events" ,current_user,:class =>"nav-link active"%> 
+    <%end%>
+  </nav>
+  <%= render 'shared/errors'%>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<h1>Events show page</h1>
+<div class="d-flex event-header">
+    <h3><span class="livetitle"><%=@event.name%></span></h3>
+    <p>
+    Date: <span class="livec"><%=@event.date%></span>
+    </p>
+    <p>
+    Host: <span class="livec"><%=@event.creator.name%></span>
+    </p>
+</div>
+<p>
+Description: <span class="livec"><%=@event.description%></span>
+</p>
+<%if @event.date < Date.today%>
+    <h4>Attended this event</h4>
+<%else%>
+    <h4>Attending event</h4>
+<%end%>
+<p>
+<%@event.attendees.pluck(:name).each do |person|%>
+<span class="livec"><%=person%></span>,
+<%end%>

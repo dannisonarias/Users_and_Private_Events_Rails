@@ -1,0 +1,37 @@
+<div class="d-flex">
+    <div class="col-6">
+        <h1 class="d-flex futureevents"> Upcoming Events </h1>
+        <hr>
+        <%@event.each do |event|%>
+        <div class="d-flex event-header">
+            <h3><span class="livetitle"><%=event.name%></span></h3>
+            
+            <p>
+                Date: <span class="livec"><%=event.date%></span>
+            </p>
+            <%=link_to "Show event information" ,event,:class =>"event-show btn btn-info"%>
+        </div>
+        <hr>
+        <%end%>
+    </div>
+
+
+        <div class="col-6">
+            <h1 class="d-flex pastevents"> Past Events </h1>
+            <hr>
+            <%@pastevent.each do |event|%>
+            <div class="d-flex event-header">
+            <h3><span class="livetitle"><%=event.name%></span></h3>
+            <p>
+            Date: <span class="livec"><%=event.date%></span>
+            </p>
+            <%=link_to "Show event information" ,event,:class =>"event-show btn btn-info"%>
+        </div>
+            <hr>
+            <%end%>
+    </div>
+</div>
+
+
+
+

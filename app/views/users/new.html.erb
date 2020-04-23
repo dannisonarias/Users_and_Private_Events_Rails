@@ -1,0 +1,9 @@
+
+<h1 class='new_user'>Login</h1>
+<%= form_with model: @user, :class => 'post_form' do |f| %>
+  <div class="field ">
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "Enter name here" %><br />
+  </div>
+    <%= f.submit 'Login',:class => 'btn btn-primary createbtn' %>
+<% end %>
