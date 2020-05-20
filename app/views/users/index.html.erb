@@ -1,0 +1,13 @@
+<h1>All available users</h1>
+<ul>
+    <%@users.pluck(:name).each do |users_name|%>
+        <li>
+            <span class ='span-1'> Invite => 
+                <%= form_with model: Registration.new, method:"post" do |f| %>
+                    <%= f.submit 'Invited',name:"invitee", value: users_name ,:class => "btn #{users_name} btn-primary" %>
+                <%end%>
+                To your event named=> <%=current_user.events.last.name%>
+            </span>
+        </li>
+    <%end%>
+</ul>

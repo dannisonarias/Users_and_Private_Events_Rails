@@ -1,0 +1,9 @@
+<%= form_with(url: sessions_path, method: "post",:class => 'form1') do |form| %>
+<h1 class='new_user'>Login</h1>
+  <div class="field ">
+    <%= form.label :name, :class =>"font-poppins" %>
+    <%= form.text_field :name,:required => true %>
+  </div>
+    <%= form.submit 'login',:class => 'btn btn-primary createbtn' %>
+  <%= link_to 'Back', events_path, :class => "btn btn-inverse" %>
+<% end %>
